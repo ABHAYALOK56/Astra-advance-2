@@ -120,8 +120,7 @@ class Moderation(commands.Cog):
         # Check if user has proper permissions (bot owner, guild owner, or ban permission)
         if ctx.author.id != self.bot_owner_id and not ctx.author.guild_permissions.ban_members and ctx.author.id != ctx.guild.owner_id:
             embed = discord.Embed(
-                title="❌ Permission Denied", 
-                description="You need **Ban Members** permission to use this command!", 
+                description="Please mention a user or provide a valid user ID", 
                 color=0xff0000
             )
             await ctx.send(embed=embed)
