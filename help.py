@@ -128,7 +128,7 @@ class Help(commands.Cog):
             title="<a:MF_BlackHelper:1387026040605507675> Help Menu",
             description= "<:black_gengar:1386999245042618450>Hey bud! I'm **Astra**, a bot, here to make your"
             "discord experience even better. Need help with "
-            "commands? Type .help to see what I can do.",
+            "commands? Type `{load_prefix()}` to see what I can do.",
             color=0x228B22
         )
         
