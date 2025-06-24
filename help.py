@@ -11,7 +11,7 @@ class HelpSelect(Select):
             discord.SelectOption(label="🎉 Giveaway", description="Gstart, gend, greroll, gdelete commands", value="giveaway"),
             discord.SelectOption(label="👑 Owner Only", description="Premium, IP ban, special commands", value="owner"),
         ]
-        super().__init__(placeholder="Choose a category...", options=options)
+        super().__init__(placeholder="Select A Category To Get Started ", options=options)
 
     async def callback(self, interaction: discord.Interaction):
         embeds = {
