@@ -126,17 +126,11 @@ class Help(commands.Cog):
     async def help_command(self, ctx):
         embed = discord.Embed(
             title="📚 Bot Help Menu",
-            description="Select a category from the dropdown below to view commands!",
-            color=0x00ff00
-        )
-        embed.add_field(
-            name="Categories:",
-            value="<:black_gengar:1386999245042618450>Hey bud! I'm **Astra**, a bot, here to make your" 
+            description="<:black_gengar:1386999245042618450>Hey bud! I'm **Astra**, a bot, here to make your" 
             "discord experience even better. Need help with" 
             "commands? Type .help to see what I can do.",
-            inline=False
+            color=0x00ff00
         )
-        embed.set_footer(text="Use the dropdown menu to explore commands!")
 
         view = HelpView()
         await ctx.send(embed=embed, view=view)
