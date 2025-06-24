@@ -5,7 +5,7 @@ from discord.ui import View, Select
 class HelpSelect(Select):
     def __init__(self):
         options = [
-            discord.SelectOption(label="<:1000082828:1387031228724543598> Welcome", description="Autorole, greet, verification, welcome commands", value="welcome"),
+            discord.SelectOption(label="Welcome",emoji="<:1000082828:1387031228724543598>" , description="Autorole, greet, verification, welcome commands", value="welcome"),
             discord.SelectOption(label="<:moderation:1386275326967021691> Moderation", description="Antinuke, automod, ban, kick, timeout, etc.", value="moderation"),
             discord.SelectOption(label="<:1000082827:1387029382807294163> Utility", description="AFK, avatar, serverinfo, ping, etc.", value="utility"),
             discord.SelectOption(label="<:giveaways:1387030030835519601> Giveaway", description="Gstart, gend, greroll, gdelete commands", value="giveaway"),
