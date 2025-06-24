@@ -22,7 +22,17 @@ class HelpSelect(Select):
                            "`verification`"
                            "`welcome`",
                 color=0x00ff00
-            ),
+            )
+           embeds.set_author(
+        name=f"{requester.display_name}",
+        icon_url=bot_user.avatar.url if bot_user.avatar else None
+    )
+
+    # Top-right: big bot avatar
+    if bot_user.avatar:
+        embeds.set_thumbnail(url=bot_user.avatar.url)
+
+    await ctx.send(embeds=embeds) ,
             
             "moderation": discord.Embed(
                 title="🛡️ Moderation Commands",
