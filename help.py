@@ -131,11 +131,9 @@ class Help(commands.Cog):
         )
         embed.add_field(
             name="Categories:",
-            value="🏠 **Welcome** - Autorole, greet, verification\n"
-                  "🛡️ **Moderation** - Ban, kick, timeout, antinuke\n"
-                  "⚙️ **Utility** - Avatar, serverinfo, ping, etc.\n"
-                  "🎉 **Giveaway** - Gstart, gend, greroll\n"
-                  "👑 **Owner Only** - Premium, special commands",
+            value="<:black_gengar:1386999245042618450>Hey bud! I'm **Astra**, a bot, here to make your" 
+            "discord experience even better. Need help with" 
+            "commands? Type .help to see what I can do.",
             inline=False
         )
         embed.set_footer(text="Use the dropdown menu to explore commands!")
