@@ -125,12 +125,14 @@ class Help(commands.Cog):
     @commands.command(name='help')
     async def help_command(self, ctx):
         embed = discord.Embed(
-            title="set_thumbnail",
+            ,
             description="<:black_gengar:1386999245042618450>Hey bud! I'm **Astra**, a bot, here to make your" 
             "discord experience even better. Need help with" 
             "commands? Type .help to see what I can do.",
             color=0x00ff00
         )
+        embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar.url)
+    await ctx.send(embed=embed)
 
         view = HelpView()
         await ctx.send(embed=embed, view=view)
