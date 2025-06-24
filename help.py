@@ -17,10 +17,10 @@ class HelpSelect(Select):
         embeds = {
             "welcome": discord.Embed(
                 title=" Welcome [4]",
-                description="`autorole`"
-                           "`greet`"
-                           "`verification`"
-                           "`welcome`",
+                description="`autorole"
+                           "greet"
+                           "verification"
+                           "welcome`",
                 color=0x00ff00
             )
            embeds.set_author(
