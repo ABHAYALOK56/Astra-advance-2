@@ -131,15 +131,7 @@ class Help(commands.Cog):
             "commands? Type .help to see what I can do.",
             color=0x99AAb5
         )
-        embed.add_field(
-            name="Categories:",
-            value="🏠 **Welcome** - Autorole, greet, verification\n"
-                  "🛡️ **Moderation** - Ban, kick, timeout, antinuke\n"
-                  "⚙️ **Utility** - Avatar, serverinfo, ping, etc.\n"
-                  "🎉 **Giveaway** - Gstart, gend, greroll\n"
-                  "👑 **Owner Only** - Premium, special commands",
-            inline=False
-        )
+        
         embed.set_footer(text="Use the dropdown menu to explore commands!")
 
         view = HelpView()
