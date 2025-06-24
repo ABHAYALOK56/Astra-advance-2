@@ -6,8 +6,8 @@ class HelpSelect(Select):
     def __init__(self):
         options = [
             discord.SelectOption(label="🏠 Welcome", description="Autorole, greet, verification, welcome commands", value="welcome"),
-            discord.SelectOption(label="🛡️ Moderation", description="Antinuke, automod, ban, kick, timeout, etc.", value="moderation"),
-            discord.SelectOption(label="⚙️ Utility", description="AFK, avatar, serverinfo, ping, etc.", value="utility"),
+            discord.SelectOption(label="<:moderation:1386275326967021691>Moderation", description="Antinuke, automod, ban, kick, timeout, etc.", value="moderation"),
+            discord.SelectOption(label="<:1000082827:1387029382807294163> Utility", description="AFK, avatar, serverinfo, ping, etc.", value="utility"),
             discord.SelectOption(label="🎉 Giveaway", description="Gstart, gend, greroll, gdelete commands", value="giveaway"),
             discord.SelectOption(label="👑 Owner Only", description="Premium, IP ban, special commands", value="owner"),
         ]
@@ -126,7 +126,7 @@ class Help(commands.Cog):
     async def help_command(self, ctx):
         embed = discord.Embed(
             title="<a:MF_BlackHelper:1387026040605507675> Help Menu",
-            description= "<:black_gengar:1386999245042618450>Hey bud! I'm **Astra**, a bot, here to make your"
+            description= "<:1000082740:1387029387270164572>Hey bud! I'm **Astra**, a bot, here to make your"
             "discord experience even better. Need help with "
             "commands? Type `{load_prefix()}` to see what I can do.",
             color=0x228B22
