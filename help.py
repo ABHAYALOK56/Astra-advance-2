@@ -16,13 +16,14 @@ class HelpSelect(Select):
     async def callback(self, interaction: discord.Interaction):
         embeds = {
             "welcome": discord.Embed(
-                title="🏠 Welcome Commands",
-                description="**Autorole** - `!autorole <role>` - Set auto role for new members\n"
-                           "**Greet** - `!greet <channel>` - Set greeting channel\n"
-                           "**Verification** - `!verification <channel>` - Set verification system\n"
-                           "**Welcome** - `!welcome <message>` - Set welcome message",
+                title=" Welcome [4]",
+                description="`autorole`"
+                           "`greet`"
+                           "`verification`"
+                           "`welcome`",
                 color=0x00ff00
             ),
+            
             "moderation": discord.Embed(
                 title="🛡️ Moderation Commands",
                 description="**Antinuke** - `!antinuke <on/off>` - Toggle antinuke protection\n"
