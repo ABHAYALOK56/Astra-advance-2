@@ -129,7 +129,7 @@ class Help(commands.Cog):
             description= "<:black_gengar:1386999245042618450>Hey bud! I'm **Astra**, a bot, here to make your"
             "discord experience even better. Need help with "
             "commands? Type .help to see what I can do.",
-            color=0x99AAb5
+            color=0x228B22
         )
         
         embed.set_footer(text="Use the dropdown menu to explore commands!")
