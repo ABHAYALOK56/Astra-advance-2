@@ -6,10 +6,10 @@ class HelpSelect(Select):
     def __init__(self):
         options = [
             discord.SelectOption(label="Welcome",emoji="<:1000082828:1387031228724543598>" , description="Autorole, greet, verification, welcome commands", value="welcome"),
-            discord.SelectOption(label="<:moderation:1386275326967021691> Moderation", description="Antinuke, automod, ban, kick, timeout, etc.", value="moderation"),
-            discord.SelectOption(label="<:1000082827:1387029382807294163> Utility", description="AFK, avatar, serverinfo, ping, etc.", value="utility"),
-            discord.SelectOption(label="<:giveaways:1387030030835519601> Giveaway", description="Gstart, gend, greroll, gdelete commands", value="giveaway"),
-            discord.SelectOption(label="<:cyber_Commands:1386276524222840902> Owner Only", description="Premium, IP ban, special commands", value="owner"),
+            discord.SelectOption(label="Moderation", emoji="<:moderation:1386275326967021691>" , description="Antinuke, automod, ban, kick, timeout, etc.", value="moderation"),
+            discord.SelectOption(label="Utility", emoji="<:1000082827:1387029382807294163>" , description="AFK, avatar, serverinfo, ping, etc.", value="utility"),
+            discord.SelectOption(label="Giveaway", emoji="<:giveaways:1387030030835519601>" , description="Gstart, gend, greroll, gdelete commands", value="giveaway"),
+            discord.SelectOption(label="Owner Only", emoji="<:cyber_Commands:1386276524222840902>" , description="Premium, IP ban, special commands", value="owner"),
         ]
         super().__init__(placeholder="Select A Category To Get Started ", options=options)
 
