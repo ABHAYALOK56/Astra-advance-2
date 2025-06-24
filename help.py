@@ -126,7 +126,7 @@ class Help(commands.Cog):
     async def help_command(self, ctx):
         embed = discord.Embed(
             title="<a:MF_BlackHelper:1387026040605507675> Help Menu",
-            description= "<:1000082740:1387029387270164572>Hey bud! I'm **Astra**, a bot, here to make your"
+            description= "<:1000082740:1387029387270164572>Hey bud! I'm **Astra**, a bot, here to make your "
             "discord experience even better. Need help with "
             "commands? Type `{load_prefix()}` to see what I can do.",
             color=0x228B22
