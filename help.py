@@ -23,18 +23,7 @@ class HelpSelect(Select):
                            "`welcome`\n",
                 color=0x00ff00
             )
-               # Top-left: small bot pfp + requester name
-    embeds.set_author(
-        name=f"{requester.display_name}",
-        icon_url=bot_user.avatar.url if bot_user.avatar else None
-    )
-
-    # Top-right: big bot avatar
-    if bot_user.avatar:
-        embeds.set_thumbnail(url=bot_user.avatar.url)
-
-    await c
-tx.send(embed=embed)
+             
             ,
             
             "moderation": discord.Embed(
