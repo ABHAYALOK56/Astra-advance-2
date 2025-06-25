@@ -89,12 +89,12 @@ class HelpSelect(Select):
                 color=0x566573
             ),
             "giveaway": discord.Embed(
-                title="🎉 Giveaway Commands",
-                description="**Gstart** - `!gstart <duration> <winners> <prize>` - Start giveaway\n"
-                           "**Gend** - `!gend <message_id>` - End giveaway early\n"
-                           "**Greroll** - `!greroll <message_id>` - Reroll giveaway\n"
-                           "**Gdelete** - `!gdelete <message_id>` - Delete giveaway\n"
-                           "**Snowflake** - `!snowflake <id>` - Get snowflake info",
+                title="Giveaway `[5]`",
+                description="`gstart`\n"
+                           "`gend`\n"
+                           "`greroll\n"
+                           "`gdelete`\n"
+                           "`snowfake`",
                 color=0x566573
             ),
             "owner": discord.Embed(
