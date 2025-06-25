@@ -23,7 +23,7 @@ class Utility(commands.Cog):
 
     @commands.command(name="ping")
     async def ping(self, ctx):
-        await ctx.send(f"🏓 Pong! `{round(self.bot.latency * 1000)}ms`")
+        await ctx.send(f"ðŸ“ Pong! `{round(self.bot.latency * 1000)}ms`")
 
     @commands.command(name="avatar", aliases=["av"])
     async def avatar(self, ctx, member: discord.Member = None):
@@ -35,7 +35,7 @@ class Utility(commands.Cog):
     @commands.command(name="serverinfo")
     async def serverinfo(self, ctx):
         guild = ctx.guild
-        embed = discord.Embed(title=f"📊 {guild.name} Server Info", color=discord.Color.green())
+        embed = discord.Embed(title=f"ðŸ“Š {guild.name} Server Info", color=discord.Color.green())
         embed.add_field(name="Owner", value=guild.owner.mention, inline=True)
         embed.add_field(name="Members", value=guild.member_count, inline=True)
         embed.add_field(name="Created", value=guild.created_at.strftime("%B %d, %Y"), inline=True)
@@ -49,7 +49,7 @@ class Utility(commands.Cog):
     @commands.command(name="userinfo", aliases=["ui"])
     async def userinfo(self, ctx, member: discord.Member = None):
         member = member or ctx.author
-        embed = discord.Embed(title=f"👤 {member}", color=discord.Color.green())
+        embed = discord.Embed(title=f"ðŸ‘¤ {member}", color=discord.Color.green())
         embed.add_field(name="ID", value=member.id, inline=True)
         embed.add_field(name="Joined", value=member.joined_at.strftime('%b %d, %Y'), inline=True)
         embed.add_field(name="Created", value=member.created_at.strftime('%b %d, %Y'), inline=True)
@@ -60,7 +60,7 @@ class Utility(commands.Cog):
 
     @commands.command(name="botinfo")
     async def botinfo(self, ctx):
-        embed = discord.Embed(title="🤖 Bot Info", color=discord.Color.green())
+        embed = discord.Embed(title="ðŸ¤– Bot Info", color=discord.Color.green())
         embed.add_field(name="Bot Name", value=self.bot.user.name, inline=True)
         embed.add_field(name="Servers", value=len(self.bot.guilds), inline=True)
         embed.add_field(name="Users", value=len(self.bot.users), inline=True)
@@ -69,29 +69,21 @@ class Utility(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command(name="membercount", aliases=["mc"])
-async def membercount(self, ctx):
-    guild = ctx.guild
-    members = guild.members
-
-    total = guild.member_count
-    online = sum(1 for m in members if m.status == discord.Status.online)
-    idle = sum(1 for m in members if m.status == discord.Status.idle)
-    dnd = sum(1 for m in members if m.status == discord.Status.dnd)
-
-    embed = discord.Embed(title="👥 Member Status", color=discord.Color.green())
-    embed.add_field(name="Total Members", value=total, inline=True)
-    embed.add_field(name="Online", value=online, inline=True)
-    embed.add_field(name="Idle", value=idle, inline=True)
-    embed.add_field(name="Do Not Disturb", value=dnd, inline=True)
-
-    await ctx.send(embed=embed)
-    
+    async def membercount(self, ctx):
+        total = ctx.guild.member_count
+        humans = len([m for m in ctx.guild.members if not m.bot])
+        bots = len([m for m in ctx.guild.members if m.bot])
+        embed = discord.Embed(title="ðŸ‘¥ Member Count", color=discord.Color.green())
+        embed.add_field(name="Total", value=total, inline=True)
+        embed.add_field(name="Humans", value=humans, inline=True)
+        embed.add_field(name="Bots", value=bots, inline=True)
+        await ctx.send(embed=embed)
 
     @commands.command(name="afk")
     async def afk(self, ctx, *, reason="AFK"):
         self.afk_users[str(ctx.author.id)] = {"reason": reason, "time": datetime.now().isoformat()}
         self.save_afk_users()
-        await ctx.send(f"😴 {ctx.author.mention} is now AFK: {reason}")
+        await ctx.send(f"ðŸ˜´ {ctx.author.mention} is now AFK: {reason}")
 
     @commands.command(name="unafk")
     async def unafk(self, ctx):
@@ -99,9 +91,9 @@ async def membercount(self, ctx):
         if uid in self.afk_users:
             del self.afk_users[uid]
             self.save_afk_users()
-            await ctx.send(f"👋 Welcome back {ctx.author.mention}, you are no longer AFK.")
+            await ctx.send(f"ðŸ‘‹ Welcome back {ctx.author.mention}, you are no longer AFK.")
         else:
-            await ctx.send("❌ You are not AFK!")
+            await ctx.send("âŒ You are not AFK!")
 
     @commands.Cog.listener()
     async def on_message(self, message):
@@ -119,7 +111,7 @@ async def membercount(self, ctx):
             del self.afk_users[uid]
             self.save_afk_users()
             try:
-                await message.channel.send(f"👋 Welcome back {message.author.mention}, you are no longer AFK.", delete_after=5)
+                await message.channel.send(f"ðŸ‘‹ Welcome back {message.author.mention}, you are no longer AFK.", delete_after=5)
             except:
                 pass
 
@@ -129,22 +121,22 @@ async def membercount(self, ctx):
             if mentioned_uid in self.afk_users and mentioned_uid != uid:
                 reason = self.afk_users[mentioned_uid]['reason']
                 try:
-                    await message.channel.send(f"😴 {user.display_name} is AFK: {reason}", delete_after=10)
+                    await message.channel.send(f"ðŸ˜´ {user.display_name} is AFK: {reason}", delete_after=10)
                 except:
                     pass
 
     @commands.command(name="invite")
     async def invite(self, ctx):
         invite_url = f"https://discord.com/oauth2/authorize?client_id={self.bot.user.id}&permissions=8&scope=bot"
-        await ctx.send(f"📨 [Invite Me]({invite_url})")
+        await ctx.send(f"ðŸ“¨ [Invite Me]({invite_url})")
 
     @commands.command(name="purgemsg", aliases=["clearmsg"])
     async def clear_messages(self, ctx, amount: int = 10):
         if ctx.author.id != self.bot_owner_id and not ctx.author.guild_permissions.manage_messages:
-            return await ctx.send("❌ You need Manage Messages permission.")
+            return await ctx.send("âŒ You need Manage Messages permission.")
         amount = min(amount, 100)
         deleted = await ctx.channel.purge(limit=amount + 1)
-        msg = await ctx.send(f"🧹 Deleted `{len(deleted) - 1}` messages.")
+        msg = await ctx.send(f"ðŸ§¹ Deleted `{len(deleted) - 1}` messages.")
         await asyncio.sleep(3)
         await msg.delete()
 
