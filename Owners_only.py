@@ -62,7 +62,7 @@ class OwnersOnly(commands.Cog):
     def is_no_prefix_user(self, user_id):
         return str(user_id) in self.no_prefix_users
 
-    @commands.command(name='addnoprefix', aliases='[np add]' )
+    @commands.command(name='addnoprefix' )
     @is_bot_owner()
     async def add_no_prefix(self, ctx, user: discord.Member = None):
         if user is None:
