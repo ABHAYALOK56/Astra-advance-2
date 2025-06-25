@@ -16,7 +16,7 @@ class HelpSelect(Select):
     async def callback(self, interaction: discord.Interaction):
         embeds = {
             "welcome": discord.Embed(
-                title=" Welcome [4]",
+                title=" Welcome `[4]`",
                 description="`autorole`\n"
                            "`greet`\n"
                            "`verification`\n"
@@ -27,15 +27,15 @@ class HelpSelect(Select):
             ,
             
             "moderation": discord.Embed(
-                title="🛡️ Moderation Commands",
-                description="**Antinuke** - `!antinuke <on/off>` - Toggle antinuke protection\n"
-                           "**Automod** - `!automod <on/off>` - Toggle automoderation\n"
-                           "**Ban** - `!ban <user> [reason]` - Ban a user\n"
-                           "**Clear** - `!clear <amount>` - Clear messages\n"
-                           "**Hide** - `!hide <channel>` - Hide a channel\n"
-                           "**Kick** - `!kick <user> [reason]` - Kick a user\n"
-                           "**Lock** - `!lock <channel>` - Lock a channel\n"
-                           "**Nuke** - `!nuke <channel>` - Nuke a channel\n"
+                title="Moderation `[22]`",
+                description="`antinuke'\n"
+                           "`automod`\n"
+                           "`ban'\n"
+                           "`clear`\n"
+                           "`hide`\n"
+                           "`kick`\n"
+                           "`lock'\n"
+                           "`nuke`\n"
                            "**Punishment** - `!punishment <user>` - View punishments\n"
                            "**Role** - `!role <user> <role>` - Manage roles\n"
                            "**Slowmode** - `!slowmode <seconds>` - Set slowmode\n"
