@@ -52,7 +52,7 @@ class HelpSelect(Select):
                 color=0x566573
             ),
             "utility": discord.Embed(
-                title="⚙️ Utility Commands",
+                title="Utility `[34]",
                 description="`afk`\n"
                            "`autoreact`\n"
                            "`autoresponder`\n"
@@ -80,12 +80,12 @@ class HelpSelect(Select):
                            "`statusrole`\n"
                            "`steal`\n"
                            "`stickynick`\n"
-                           "'translate`\n"
+                           "`translate`\n"
                            "`userinfo`\n"
                            "`variables`\n"
                            "`ytnotifier`\n"
                            "`introduction`\n"
-                           "`support'",
+                           "`support`",
                 color=0x566573
             ),
             "giveaway": discord.Embed(
