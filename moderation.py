@@ -683,7 +683,7 @@ class NukeConfirmView(discord.ui.View):
         self.author = author
         self.value = None
 
-    @discord.ui.button(label='Yes, Nuke It!', style=discord.ButtonStyle.green)
+    @discord.ui.button(label='Yes', style=discord.ButtonStyle.green)
     async def confirm_nuke(self, interaction: discord.Interaction, button: discord.ui.Button):
         if interaction.user != self.author:
             await interaction.response.send_message("❌ Only the command user can confirm this action!", ephemeral=True)
@@ -717,7 +717,7 @@ class NukeConfirmView(discord.ui.View):
 
             # Send success message in new channel
             embed = discord.Embed(
-                title="💥 Channel Nuked Successfully!",
+                title="`nuked by {user}`",
                 description=f"**{channel_name}** has been nuked and recreated",
                 color=0x00ff00
             )
@@ -733,14 +733,14 @@ class NukeConfirmView(discord.ui.View):
         self.value = True
         self.stop()
 
-    @discord.ui.button(label='Cancel', style=discord.ButtonStyle.red)
+    @discord.ui.button(label='No', style=discord.ButtonStyle.red)
     async def cancel_nuke(self, interaction: discord.Interaction, button: discord.ui.Button):
         if interaction.user != self.author:
             await interaction.response.send_message("❌ Only the command user can cancel this action!", ephemeral=True)
             return
 
         embed = discord.Embed(
-            title="❌ Nuke Cancelled",
+            
             description="Channel nuke has been cancelled",
             color=0xff0000
         )
