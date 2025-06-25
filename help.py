@@ -43,12 +43,12 @@ class HelpSelect(Select):
                            "`unban`\n"
                            "`unhide`\n"
                            "`unlock`\n"
-                           "**Unmute** - `!unmute <user>` - Unmute a user\n"
-                           "**Vanityguard** - `!vanityguard <on/off>` - Toggle vanity guard\n"
-                           "**Whitelist** - `!whitelist <user>` - Whitelist user for ping security\n"
-                           "**Unwhitelist** - `!unwhitelist <user>` - Remove from ping whitelist\n"
-                           "**Whitelist View** - `!whitelistview` - View whitelisted users\n"
-                           "**Unhide** - `!unhide [channel]` - Unhide a channel",
+                           "`unmute`\n"
+                           "`vanityguard`\n"
+                           "`whitelist'\n"
+                           "`unwhitelist`\n"
+                           "`whitelistview`\n"
+                           "`unhide`",
                 color=0xff0000
             ),
             "utility": discord.Embed(
