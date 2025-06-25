@@ -85,21 +85,33 @@ class Utility(commands.Cog):
         self.save_afk_users()
         await ctx.send(f"😴 {ctx.author.mention} is now AFK: {reason}")
 
+    @commands.command(name="unafk")
+    async def unafk(self, ctx):
+        uid = str(ctx.author.id)
+        if uid in self.afk_users:
+            del self.afk_users[uid]
+            self.save_afk_users()
+            await ctx.send(f"👋 Welcome back {ctx.author.mention}, you are no longer AFK.")
+        else:
+            await ctx.send("❌ You are not AFK!")
+
     @commands.Cog.listener()
     async def on_message(self, message):
         if message.author.bot:
             return
 
+        # Check if the author is AFK and remove AFK status
         uid = str(message.author.id)
         if uid in self.afk_users:
             del self.afk_users[uid]
             self.save_afk_users()
             await message.channel.send(f"👋 Welcome back {message.author.mention}, you are no longer AFK.", delete_after=5)
 
+        # Show AFK status when someone mentions an AFK user
         for user in message.mentions:
-            uid = str(user.id)
-            if uid in self.afk_users:
-                reason = self.afk_users[uid]['reason']
+            mentioned_uid = str(user.id)
+            if mentioned_uid in self.afk_users:
+                reason = self.afk_users[mentioned_uid]['reason']
                 await message.channel.send(f"😴 {user.display_name} is AFK: {reason}", delete_after=10)
 
     @commands.command(name="invite")
