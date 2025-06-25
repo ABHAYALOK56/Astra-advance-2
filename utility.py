@@ -69,15 +69,23 @@ class Utility(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command(name="membercount", aliases=["mc"])
-    async def membercount(self, ctx):
-        total = ctx.guild.member_count
-        humans = len([m for m in ctx.guild.members if not m.bot])
-        bots = len([m for m in ctx.guild.members if m.bot])
-        embed = discord.Embed(title="👥 Member Count", color=discord.Color.green())
-        embed.add_field(name="Total Members:", value=total, inline=True)
-        embed.add_field(name="Humans", value=humans, inline=True)
-        embed.add_field(name="Bots", value=bots, inline=True)
-        await ctx.send(embed=embed)
+async def membercount(self, ctx):
+    guild = ctx.guild
+    members = guild.members
+
+    total = guild.member_count
+    online = sum(1 for m in members if m.status == discord.Status.online)
+    idle = sum(1 for m in members if m.status == discord.Status.idle)
+    dnd = sum(1 for m in members if m.status == discord.Status.dnd)
+
+    embed = discord.Embed(title="👥 Member Status", color=discord.Color.green())
+    embed.add_field(name="Total Members", value=total, inline=True)
+    embed.add_field(name="Online", value=online, inline=True)
+    embed.add_field(name="Idle", value=idle, inline=True)
+    embed.add_field(name="Do Not Disturb", value=dnd, inline=True)
+
+    await ctx.send(embed=embed)
+    
 
     @commands.command(name="afk")
     async def afk(self, ctx, *, reason="AFK"):
