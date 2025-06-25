@@ -74,7 +74,7 @@ class Utility(commands.Cog):
         humans = len([m for m in ctx.guild.members if not m.bot])
         bots = len([m for m in ctx.guild.members if m.bot])
         embed = discord.Embed(title="👥 Member Count", color=discord.Color.green())
-        embed.add_field(name="Total", value=total, inline=True)
+        embed.add_field(name="Total Members:", value=total, inline=True)
         embed.add_field(name="Humans", value=Online, inline=True)
         embed.add_field(name="Bots", value=bots, inline=True)
         await ctx.send(embed=embed)
