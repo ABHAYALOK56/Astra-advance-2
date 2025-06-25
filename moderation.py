@@ -459,12 +459,8 @@ class Moderation(commands.Cog):
 
         # Create confirmation embed
         embed = discord.Embed(
-            title="⚠️ Nuke Channel Confirmation",
-            description=f"Are you sure you want to nuke **{ctx.channel.name}**?\n\n"
-                       f"🚨 **Warning**: This will delete the channel and recreate it!\n"
-                       f"• All messages will be lost\n"
-                       f"• Channel settings will be reset\n"
-                       f"• This action cannot be undone",
+            
+            description="Are you sure you want to clone this channel?",
             color=0xff6600
         )
         embed.set_footer(text="This confirmation will expire in 30 seconds")
