@@ -41,14 +41,14 @@ class Moderation(commands.Cog):
         # Check if user is bot owner or has administrator permissions
         if ctx.author.id != self.bot_owner_id and not ctx.author.guild_permissions.administrator:
             embed = discord.Embed(
-                title="âŒ Permission Denied", 
+                title="❌ Permission Denied", 
                 description="You need **Administrator** permission to use this command!", 
                 color=0xff0000
             )
             await ctx.send(embed=embed)
             return
         if status not in ['on', 'off']:
-            embed = discord.Embed(title="âŒ Error", description="Use `!antinuke on` or `!antinuke off`", color=0xff0000)
+            embed = discord.Embed(title="❌ Error", description="Use `!antinuke on` or `!antinuke off`", color=0xff0000)
             await ctx.send(embed=embed)
             return
 
@@ -63,25 +63,25 @@ class Moderation(commands.Cog):
         if status == 'on':
             await self.bot.change_presence(
                 activity=discord.Streaming(
-                    name=f"ðŸ›¡ï¸ Antinuke Active | {len(self.bot.guilds)} servers",
+                    name=f"🛡️ Antinuke Active | {len(self.bot.guilds)} servers",
                     url="https://www.twitch.tv/discord"
                 ),
                 status=discord.Status.online
             )
 
         embed = discord.Embed(
-            title="âœ… Antinuke Updated",
+            title="✅ Antinuke Updated",
             description=f"Antinuke has been turned **{status}** for **ALL CHANNELS** in this server\n"
-                       f"ðŸ›¡ï¸ Protection enabled for:\n"
-                       f"â€¢ Channel deletion/creation\n"
-                       f"â€¢ Role deletion/creation\n"
-                       f"â€¢ Mass banning\n"
-                       f"â€¢ Unauthorized bot addition",
+                       f"🛡️ Protection enabled for:\n"
+                       f"• Channel deletion/creation\n"
+                       f"• Role deletion/creation\n"
+                       f"• Mass banning\n"
+                       f"• Unauthorized bot addition",
             color=0x00ff00
         )
         embed.add_field(name="Server", value=ctx.guild.name, inline=True)
         embed.add_field(name="Total Channels Protected", value=len(ctx.guild.channels), inline=True)
-        embed.add_field(name="Status", value="ðŸŸ¢ ACTIVE" if status == 'on' else "ðŸ”´ DISABLED", inline=True)
+        embed.add_field(name="Status", value="🟢 ACTIVE" if status == 'on' else "🔴 DISABLED", inline=True)
         await ctx.send(embed=embed)
 
     @commands.command(name='automod')
@@ -89,14 +89,14 @@ class Moderation(commands.Cog):
         # Check if user is bot owner or has administrator permissions
         if ctx.author.id != self.bot_owner_id and not ctx.author.guild_permissions.administrator:
             embed = discord.Embed(
-                title="âŒ Permission Denied", 
+                title="❌ Permission Denied", 
                 description="You need **Administrator** permission to use this command!", 
                 color=0xff0000
             )
             await ctx.send(embed=embed)
             return
         if status not in ['on', 'off']:
-            embed = discord.Embed(title="âŒ Error", description="Use `!automod on` or `!automod off`", color=0xff0000)
+            embed = discord.Embed(title="❌ Error", description="Use `!automod on` or `!automod off`", color=0xff0000)
             await ctx.send(embed=embed)
             return
 
@@ -108,7 +108,7 @@ class Moderation(commands.Cog):
         self.save_config()
 
         embed = discord.Embed(
-            title="âœ… Automod Updated",
+            title="✅ Automod Updated",
             description=f"Automoderation has been turned **{status}**",
             color=0x00ff00
         )
@@ -119,55 +119,55 @@ class Moderation(commands.Cog):
     async def ban(self, ctx, member: discord.Member = None, *, reason: str = "No reason provided"):
         # Check if user has proper permissions (bot owner, guild owner, or ban permission)
         if ctx.author.id != self.bot_owner_id and not ctx.author.guild_permissions.ban_members and ctx.author.id != ctx.guild.owner_id:
-            await ctx.send("âŒ You need **Ban Members** permission to use this command!")
+            await ctx.send("❌ You need **Ban Members** permission to use this command!")
             return
 
         if member is None:
-            await ctx.send("âŒ Please specify a member to ban!")
+            await ctx.send("❌ Please specify a member to ban!")
             return
 
         if member.top_role >= ctx.author.top_role and ctx.author != ctx.guild.owner:
-            await ctx.send("âŒ You cannot ban this member!")
+            await ctx.send("❌ You cannot ban this member!")
             return
 
         try:
             await member.ban(reason=reason)
-            await ctx.send(f"ðŸ”¨ **{member.name}** has been banned from the server\nReason: {reason}\nBanned by: {ctx.author.name}")
+            await ctx.send(f"🔨 **{member.name}** has been banned from the server\nReason: {reason}\nBanned by: {ctx.author.name}")
         except Exception as e:
-            await ctx.send(f"âŒ Failed to ban member: {str(e)}")
+            await ctx.send(f"❌ Failed to ban member: {str(e)}")
 
     @commands.command(name='kick')
     @commands.has_permissions(kick_members=True)
     async def kick(self, ctx, member: discord.Member = None, *, reason: str = "No reason provided"):
         # Check if user has proper permissions (bot owner, guild owner, or kick permission)
         if ctx.author.id != self.bot_owner_id and not ctx.author.guild_permissions.kick_members and ctx.author.id != ctx.guild.owner_id:
-            await ctx.send("âŒ You need **Kick Members** permission to use this command!")
+            await ctx.send("❌ You need **Kick Members** permission to use this command!")
             return
 
         if member is None:
-            await ctx.send("âŒ Please specify a member to kick!")
+            await ctx.send("❌ Please specify a member to kick!")
             return
 
         if member.top_role >= ctx.author.top_role and ctx.author != ctx.guild.owner:
-            await ctx.send("âŒ You cannot kick this member!")
+            await ctx.send("❌ You cannot kick this member!")
             return
 
         try:
             await member.kick(reason=reason)
-            await ctx.send(f"ðŸ‘¢ **{member.name}** has been kicked from the server\nReason: {reason}\nKicked by: {ctx.author.name}")
+            await ctx.send(f"👢 **{member.name}** has been kicked from the server\nReason: {reason}\nKicked by: {ctx.author.name}")
         except Exception as e:
-            await ctx.send(f"âŒ Failed to kick member: {str(e)}")
+            await ctx.send(f"❌ Failed to kick member: {str(e)}")
 
     @commands.command(name='timeout')
     @commands.has_permissions(moderate_members=True)
     async def timeout(self, ctx, member: discord.Member = None, duration: str = "10m", *, reason: str = "No reason provided"):
         # Check if user has proper permissions (bot owner, guild owner, or moderate permission)
         if ctx.author.id != self.bot_owner_id and not ctx.author.guild_permissions.moderate_members and ctx.author.id != ctx.guild.owner_id:
-            await ctx.send("âŒ You need **Timeout Members** permission to use this command!")
+            await ctx.send("❌ You need **Timeout Members** permission to use this command!")
             return
 
         if member is None:
-            await ctx.send("âŒ Please specify a member to timeout!")
+            await ctx.send("❌ Please specify a member to timeout!")
             return
 
         # Parse duration
@@ -184,9 +184,9 @@ class Moderation(commands.Cog):
 
         try:
             await member.timeout(timeout_until, reason=reason)
-            await ctx.send(f"â° **{member.name}** has been timed out for {duration}\nReason: {reason}\nTimed out by: {ctx.author.name}")
+            await ctx.send(f"⏰ **{member.name}** has been timed out for {duration}\nReason: {reason}\nTimed out by: {ctx.author.name}")
         except Exception as e:
-            await ctx.send(f"âŒ Failed to timeout member: {str(e)}")
+            await ctx.send(f"❌ Failed to timeout member: {str(e)}")
 
     @commands.command(name='clear')
     @commands.has_permissions(manage_messages=True)
@@ -194,7 +194,7 @@ class Moderation(commands.Cog):
         # Check if user has proper permissions (bot owner, guild owner, or manage messages permission)
         if ctx.author.id != self.bot_owner_id and not ctx.author.guild_permissions.manage_messages and ctx.author.id != ctx.guild.owner_id:
             embed = discord.Embed(
-                title="âŒ Permission Denied", 
+                title="❌ Permission Denied", 
                 description="You need **Manage Messages** permission to use this command!", 
                 color=0xff0000
             )
@@ -207,7 +207,7 @@ class Moderation(commands.Cog):
         deleted = await ctx.channel.purge(limit=amount + 1)
 
         embed = discord.Embed(
-            title="ðŸ§¹ Messages Cleared",
+            title="🧹 Messages Cleared",
             description=f"Deleted {len(deleted) - 1} messages",
             color=0x00ff00
         )
@@ -220,7 +220,7 @@ class Moderation(commands.Cog):
         # Check if user is bot owner or has manage channels permission
         if ctx.author.id != self.bot_owner_id and not ctx.author.guild_permissions.manage_channels:
             embed = discord.Embed(
-                title="âŒ Permission Denied", 
+                title="❌ Permission Denied", 
                 description="You need **Manage Channels** permission to use this command!", 
                 color=0xff0000
             )
@@ -233,7 +233,7 @@ class Moderation(commands.Cog):
         await channel.set_permissions(ctx.guild.default_role, overwrite=overwrite)
 
         embed = discord.Embed(
-            title="ðŸ”’ Channel Locked",
+            title="🔒 Channel Locked",
             description=f"This channel has been locked",
             color=0xff0000
         )
@@ -244,7 +244,7 @@ class Moderation(commands.Cog):
         # Check if user is bot owner or has manage channels permission
         if ctx.author.id != self.bot_owner_id and not ctx.author.guild_permissions.manage_channels:
             embed = discord.Embed(
-                title="âŒ Permission Denied", 
+                title="❌ Permission Denied", 
                 description="You need **Manage Channels** permission to use this command!", 
                 color=0xff0000
             )
@@ -257,7 +257,7 @@ class Moderation(commands.Cog):
         await channel.set_permissions(ctx.guild.default_role, overwrite=overwrite)
 
         embed = discord.Embed(
-            title="ðŸ”“ Channel Unlocked",
+            title="🔓 Channel Unlocked",
             description=f"This channel has been unlocked",
             color=0x00ff00
         )
@@ -268,7 +268,7 @@ class Moderation(commands.Cog):
         # Check if user is bot owner or has manage channels permission
         if ctx.author.id != self.bot_owner_id and not ctx.author.guild_permissions.manage_channels:
             embed = discord.Embed(
-                title="âŒ Permission Denied", 
+                title="❌ Permission Denied", 
                 description="You need **Manage Channels** permission to use this command!", 
                 color=0xff0000
             )
@@ -278,13 +278,13 @@ class Moderation(commands.Cog):
 
         if seconds == 0:
             embed = discord.Embed(
-                title="â±ï¸ Slowmode Disabled",
+                title="⏱️ Slowmode Disabled",
                 description="Slowmode has been disabled for this channel",
                 color=0x00ff00
             )
         else:
             embed = discord.Embed(
-                title="â±ï¸ Slowmode Enabled",
+                title="⏱️ Slowmode Enabled",
                 description=f"Slowmode set to {seconds} seconds",
                 color=0x00ff00
             )
@@ -296,14 +296,14 @@ class Moderation(commands.Cog):
         # Check if user is bot owner or has administrator permission
         if ctx.author.id != self.bot_owner_id and not ctx.author.guild_permissions.administrator:
             embed = discord.Embed(
-                title="âŒ Permission Denied", 
+                title="❌ Permission Denied", 
                 description="You need **Administrator** permission to use this command!", 
                 color=0xff0000
             )
             await ctx.send(embed=embed)
             return
         if user is None:
-            embed = discord.Embed(title="âŒ Error", description="Please specify a user to whitelist!", color=0xff0000)
+            embed = discord.Embed(title="❌ Error", description="Please specify a user to whitelist!", color=0xff0000)
             await ctx.send(embed=embed)
             return
 
@@ -312,7 +312,7 @@ class Moderation(commands.Cog):
             self.whitelist[guild_id] = []
 
         if user.id in self.whitelist[guild_id]:
-            embed = discord.Embed(title="âŒ Error", description="User is already whitelisted!", color=0xff0000)
+            embed = discord.Embed(title="❌ Error", description="User is already whitelisted!", color=0xff0000)
             await ctx.send(embed=embed)
             return
 
@@ -320,7 +320,7 @@ class Moderation(commands.Cog):
         self.save_whitelist()
 
         embed = discord.Embed(
-            title="âœ… User Whitelisted",
+            title="✅ User Whitelisted",
             description=f"{user.mention} has been whitelisted for ping security",
             color=0x00ff00
         )
@@ -331,20 +331,20 @@ class Moderation(commands.Cog):
         # Check if user is bot owner or has administrator permission
         if ctx.author.id != self.bot_owner_id and not ctx.author.guild_permissions.administrator:
             embed = discord.Embed(
-                title="âŒ Permission Denied", 
+                title="❌ Permission Denied", 
                 description="You need **Administrator** permission to use this command!", 
                 color=0xff0000
             )
             await ctx.send(embed=embed)
             return
         if user is None:
-            embed = discord.Embed(title="âŒ Error", description="Please specify a user to unwhitelist!", color=0xff0000)
+            embed = discord.Embed(title="❌ Error", description="Please specify a user to unwhitelist!", color=0xff0000)
             await ctx.send(embed=embed)
             return
 
         guild_id = str(ctx.guild.id)
         if guild_id not in self.whitelist or user.id not in self.whitelist[guild_id]:
-            embed = discord.Embed(title="âŒ Error", description="User is not whitelisted!", color=0xff0000)
+            embed = discord.Embed(title="❌ Error", description="User is not whitelisted!", color=0xff0000)
             await ctx.send(embed=embed)
             return
 
@@ -352,7 +352,7 @@ class Moderation(commands.Cog):
         self.save_whitelist()
 
         embed = discord.Embed(
-            title="âœ… User Unwhitelisted",
+            title="✅ User Unwhitelisted",
             description=f"{user.mention} has been removed from ping security whitelist",
             color=0x00ff00
         )
@@ -363,7 +363,7 @@ class Moderation(commands.Cog):
         # Check if user is bot owner or has administrator permission
         if ctx.author.id != self.bot_owner_id and not ctx.author.guild_permissions.administrator:
             embed = discord.Embed(
-                title="âŒ Permission Denied", 
+                title="❌ Permission Denied", 
                 description="You need **Administrator** permission to use this command!", 
                 color=0xff0000
             )
@@ -371,11 +371,11 @@ class Moderation(commands.Cog):
             return
         guild_id = str(ctx.guild.id)
         if guild_id not in self.whitelist or not self.whitelist[guild_id]:
-            embed = discord.Embed(title="ðŸ“ Security Whitelist", description="No users/bots are whitelisted", color=0x00ff00)
+            embed = discord.Embed(title="📝 Security Whitelist", description="No users/bots are whitelisted", color=0x00ff00)
             await ctx.send(embed=embed)
             return
 
-        embed = discord.Embed(title="ðŸ“ Security Whitelist", color=0x00ff00)
+        embed = discord.Embed(title="📝 Security Whitelist", color=0x00ff00)
 
         user_list = []
         bot_list = []
@@ -383,11 +383,11 @@ class Moderation(commands.Cog):
             try:
                 user = await self.bot.fetch_user(user_id)
                 if user.bot:
-                    bot_list.append(f"ðŸ¤– {user.name}")
+                    bot_list.append(f"🤖 {user.name}")
                 else:
-                    user_list.append(f"ðŸ‘¤ {user.name}#{user.discriminator}")
+                    user_list.append(f"👤 {user.name}#{user.discriminator}")
             except:
-                user_list.append(f"â“ Unknown User ({user_id})")
+                user_list.append(f"❓ Unknown User ({user_id})")
 
         all_users = user_list + bot_list
         embed.description = "\n".join(all_users) if all_users else "No users/bots found"
@@ -398,21 +398,21 @@ class Moderation(commands.Cog):
         # Check if user is bot owner or has administrator permission
         if ctx.author.id != self.bot_owner_id and not ctx.author.guild_permissions.administrator:
             embed = discord.Embed(
-                title="âŒ Permission Denied", 
+                title="❌ Permission Denied", 
                 description="You need **Administrator** permission to use this command!", 
                 color=0xff0000
             )
             await ctx.send(embed=embed)
             return
         if bot_id is None:
-            embed = discord.Embed(title="âŒ Error", description="Please provide a bot ID to whitelist!", color=0xff0000)
+            embed = discord.Embed(title="❌ Error", description="Please provide a bot ID to whitelist!", color=0xff0000)
             await ctx.send(embed=embed)
             return
 
         try:
             bot_user = await self.bot.fetch_user(bot_id)
             if not bot_user.bot:
-                embed = discord.Embed(title="âŒ Error", description="This ID belongs to a user, not a bot!", color=0xff0000)
+                embed = discord.Embed(title="❌ Error", description="This ID belongs to a user, not a bot!", color=0xff0000)
                 await ctx.send(embed=embed)
                 return
 
@@ -421,7 +421,7 @@ class Moderation(commands.Cog):
                 self.whitelist[guild_id] = []
 
             if bot_id in self.whitelist[guild_id]:
-                embed = discord.Embed(title="âŒ Error", description="Bot is already whitelisted!", color=0xff0000)
+                embed = discord.Embed(title="❌ Error", description="Bot is already whitelisted!", color=0xff0000)
                 await ctx.send(embed=embed)
                 return
 
@@ -429,8 +429,8 @@ class Moderation(commands.Cog):
             self.save_whitelist()
 
             embed = discord.Embed(
-                title="âœ… Bot Whitelisted",
-                description=f"ðŸ¤– **{bot_user.name}** has been whitelisted for antinuke protection",
+                title="✅ Bot Whitelisted",
+                description=f"🤖 **{bot_user.name}** has been whitelisted for antinuke protection",
                 color=0x00ff00
             )
             embed.add_field(name="Bot ID", value=bot_id, inline=True)
@@ -438,10 +438,10 @@ class Moderation(commands.Cog):
             await ctx.send(embed=embed)
 
         except discord.NotFound:
-            embed = discord.Embed(title="âŒ Error", description="Bot not found with that ID!", color=0xff0000)
+            embed = discord.Embed(title="❌ Error", description="Bot not found with that ID!", color=0xff0000)
             await ctx.send(embed=embed)
         except Exception as e:
-            embed = discord.Embed(title="âŒ Error", description=f"Failed to whitelist bot: {str(e)}", color=0xff0000)
+            embed = discord.Embed(title="❌ Error", description=f"Failed to whitelist bot: {str(e)}", color=0xff0000)
             await ctx.send(embed=embed)
 
     @commands.Cog.listener()
@@ -468,4 +468,5 @@ class Moderation(commands.Cog):
                             await entry.user.ban(reason="Antinuke: Unauthorized bot deleted channel")
                         except:
                             # If can't ban, try to kick
-                         
+                            try:
+                                await channel.guild.kick(entry.user, reason="Antinuke: Unauthorized bot deleted channe
