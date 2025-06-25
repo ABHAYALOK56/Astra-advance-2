@@ -21,7 +21,7 @@ class HelpSelect(Select):
                            "`greet`\n"
                            "`verification`\n"
                            "`welcome`\n",
-                color=0x00ff00
+                color=0x566573
             )
              
             ,
@@ -49,7 +49,7 @@ class HelpSelect(Select):
                            "`unwhitelist`\n"
                            "`whitelistview`\n"
                            "`unhide`",
-                color=0xff0000
+                color=0x566573
             ),
             "utility": discord.Embed(
                 title="⚙️ Utility Commands",
@@ -86,7 +86,7 @@ class HelpSelect(Select):
                            "**YTNotifier** - `!ytnotifier <channel>` - YouTube notifications\n"
                            "**Introduction** - `!introduction` - Set introduction\n"
                            "**Support** - `!support` - Get support info",
-                color=0x0099ff
+                color=0x566573
             ),
             "giveaway": discord.Embed(
                 title="🎉 Giveaway Commands",
@@ -95,7 +95,7 @@ class HelpSelect(Select):
                            "**Greroll** - `!greroll <message_id>` - Reroll giveaway\n"
                            "**Gdelete** - `!gdelete <message_id>` - Delete giveaway\n"
                            "**Snowflake** - `!snowflake <id>` - Get snowflake info",
-                color=0xffff00
+                color=0x566573
             ),
             "owner": discord.Embed(
                 title="👑 Owner Only Commands",
@@ -110,7 +110,7 @@ class HelpSelect(Select):
                            "**Bot Owner** - `!botowner` - Bot owner panel\n"
                            "**Premium Check** - `!premium [user]` - Check premium status\n"
                            "**No Prefix** - Bot owner can use commands without prefix",
-                color=0x9900ff
+                color=0x566573
             )
         }
 
