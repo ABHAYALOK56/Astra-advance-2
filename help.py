@@ -106,7 +106,7 @@ class HelpSelect(Select):
                            "`ipunban`\n"
                            "`ipbanlist`\n"
                            "`no prefix add`\n"
-                           "`!no prefix remove`\n"
+                           "`no prefix remove`\n"
                            "`botowner`\n"
                            "`premium`\n"
                            ,
