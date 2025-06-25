@@ -463,7 +463,7 @@ class Moderation(commands.Cog):
             description="Are you sure you want to clone this channel?",
             color=0xff6600
         )
-        embed.set_footer(text="This confirmation will expire in 30 seconds")
+        
 
         # Create buttons
         view = NukeConfirmView(ctx.author)
