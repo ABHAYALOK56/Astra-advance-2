@@ -98,18 +98,18 @@ class HelpSelect(Select):
                 color=0x566573
             ),
             "owner": discord.Embed(
-                title="👑 Owner Only Commands",
-                description="**Premium Activate** - `!activate <user>` - Activate premium\n"
-                           "**Premium Deactivate** - `!deactivate <user>` - Remove premium\n"
-                           "**Premium List** - `!premiumlist` - View premium users\n"
-                           "**IP Ban** - `!ipban <user> [reason]` - IP ban a user (Premium)\n"
-                           "**IP Unban** - `!ipunban <user_id>` - Remove IP ban (Premium)\n"
-                           "**IP Ban List** - `!ipbanlist` - View IP banned users (Premium)\n"
-                           "**NP add** - `!np add <user>` - Add user to no prefix (Owner)\n"
-                           "**NP remove** - `!np remove <user>` - Remove user from no prefix (Owner)\n"
-                           "**Bot Owner** - `!botowner` - Bot owner panel\n"
-                           "**Premium Check** - `!premium [user]` - Check premium status\n"
-                           "**No Prefix** - Bot owner can use commands without prefix",
+                title="Premium command`[10]`",
+                description="`activate`\n"
+                           "`deactivate`\n"
+                           "`premiumlist`\n"
+                           "`ipban`\n"
+                           "`ipunban`\n"
+                           "`ipbanlist`\n"
+                           "`no prefix add`\n"
+                           "`!no prefix remove`\n"
+                           "`botowner`\n"
+                           "`premium`\n"
+                           ,
                 color=0x566573
             )
         }
