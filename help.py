@@ -28,15 +28,15 @@ class HelpSelect(Select):
             
             "moderation": discord.Embed(
                 title="Moderation `[22]`",
-                description="`antinuke'\n"
+                description="`antinuke`\n"
                            "`automod`\n"
-                           "`ban'\n"
+                           "`ban`\n"
                            "`clear`\n"
                            "`hide`\n"
                            "`kick`\n"
-                           "`lock'\n"
+                           "`lock`\n"
                            "`nuke`\n"
-                           "`punishment'\n"
+                           "`punishment`\n"
                            "`role`\n"
                            "`slowmode`\n"
                            "`timeout`\n"
@@ -45,7 +45,7 @@ class HelpSelect(Select):
                            "`unlock`\n"
                            "`unmute`\n"
                            "`vanityguard`\n"
-                           "`whitelist'\n"
+                           "`whitelist`\n"
                            "`unwhitelist`\n"
                            "`whitelistview`\n"
                            "`unhide`",
