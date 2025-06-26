@@ -43,7 +43,7 @@ class Giveaway(commands.Cog):
         
         embed = discord.Embed(
             title="<:tadaa:1387787982735540266> GIVEAWAY <:tadaa:1387787982735540266>",
-            description=f"**Prize:** {prize}\n**Winners:** {winners}\n**Ends:** <t:{int(end_time.timestamp())}:R>",
+            description=f"**Prize:** {prize}\n**Winners:** {winners}\n**Ends at** <t:{int(end_time.timestamp())}:R>",
             color=0x2e2e2e
         )
         
