@@ -44,7 +44,7 @@ class Moderation(commands.Cog):
             embed = discord.Embed(
                 title="❌ Permission Denied", 
                 description="You need **Administrator** permission to use this command!", 
-                color=0xff0000
+                color=0x2e2e2e
             )
             await ctx.send(embed=embed)
             return
@@ -78,7 +78,7 @@ class Moderation(commands.Cog):
                        f"• Role deletion/creation\n"
                        f"• Mass banning\n"
                        f"• Unauthorized bot addition",
-            color=0x00ff00
+            color=0x2e2e2e
         )
         embed.add_field(name="Server", value=ctx.guild.name, inline=True)
         embed.add_field(name="Total Channels Protected", value=len(ctx.guild.channels), inline=True)
@@ -92,7 +92,7 @@ class Moderation(commands.Cog):
             embed = discord.Embed(
                 title="❌ Permission Denied", 
                 description="You need **Administrator** permission to use this command!", 
-                color=0xff0000
+                color=0x2e2e2e
             )
             await ctx.send(embed=embed)
             return
@@ -111,7 +111,7 @@ class Moderation(commands.Cog):
         embed = discord.Embed(
             title="✅ Automod Updated",
             description=f"Automoderation has been turned **{status}**",
-            color=0x00ff00
+            color=0x2e2e2e
         )
         await ctx.send(embed=embed)
 
@@ -197,7 +197,7 @@ class Moderation(commands.Cog):
             embed = discord.Embed(
                 title="❌ Permission Denied", 
                 description="You need **Manage Messages** permission to use this command!", 
-                color=0xff0000
+                color=0x2e2e2e
             )
             await ctx.send(embed=embed)
             return
@@ -210,7 +210,7 @@ class Moderation(commands.Cog):
         embed = discord.Embed(
             title="🧹 Messages Cleared",
             description=f"Deleted {len(deleted) - 1} messages",
-            color=0x00ff00
+            color=0x2e2e2e
         )
         msg = await ctx.send(embed=embed)
         await asyncio.sleep(3)
@@ -223,7 +223,7 @@ class Moderation(commands.Cog):
             embed = discord.Embed(
                 title="❌ Permission Denied", 
                 description="You need **Manage Channels** permission to use this command!", 
-                color=0xff0000
+                color=0x2e2e2e
             )
             await ctx.send(embed=embed)
             return
@@ -236,7 +236,7 @@ class Moderation(commands.Cog):
         embed = discord.Embed(
             title="🔒 Channel Locked",
             description=f"This channel has been locked",
-            color=0xff0000
+            color=0x2e2e2e
         )
         await ctx.send(embed=embed)
 
@@ -247,7 +247,7 @@ class Moderation(commands.Cog):
             embed = discord.Embed(
                 title="❌ Permission Denied", 
                 description="You need **Manage Channels** permission to use this command!", 
-                color=0xff0000
+                color=0x2e2e2e
             )
             await ctx.send(embed=embed)
             return
@@ -260,7 +260,7 @@ class Moderation(commands.Cog):
         embed = discord.Embed(
             title="🔓 Channel Unlocked",
             description=f"This channel has been unlocked",
-            color=0x00ff00
+            color=0x2e2e2e
         )
         await ctx.send(embed=embed)
 
@@ -271,7 +271,7 @@ class Moderation(commands.Cog):
             embed = discord.Embed(
                 title="❌ Permission Denied", 
                 description="You need **Manage Channels** permission to use this command!", 
-                color=0xff0000
+                color=0x2e2e2e
             )
             await ctx.send(embed=embed)
             return
@@ -281,13 +281,13 @@ class Moderation(commands.Cog):
             embed = discord.Embed(
                 title="⏱️ Slowmode Disabled",
                 description="Slowmode has been disabled for this channel",
-                color=0x00ff00
+                color=0x2e2e2e
             )
         else:
             embed = discord.Embed(
                 title="⏱️ Slowmode Enabled",
                 description=f"Slowmode set to {seconds} seconds",
-                color=0x00ff00
+                color=0x2e2e2e
             )
 
         await ctx.send(embed=embed)
@@ -299,7 +299,7 @@ class Moderation(commands.Cog):
             embed = discord.Embed(
                 title="❌ Permission Denied", 
                 description="You need **Administrator** permission to use this command!", 
-                color=0xff0000
+                color=0x2e2e2e
             )
             await ctx.send(embed=embed)
             return
@@ -323,7 +323,7 @@ class Moderation(commands.Cog):
         embed = discord.Embed(
             title="✅ User Whitelisted",
             description=f"{user.mention} has been whitelisted for ping security",
-            color=0x00ff00
+            color=0x2e2e2e
         )
         await ctx.send(embed=embed)
 
@@ -334,7 +334,7 @@ class Moderation(commands.Cog):
             embed = discord.Embed(
                 title="❌ Permission Denied", 
                 description="You need **Administrator** permission to use this command!", 
-                color=0xff0000
+                color=0x2e2e2e
             )
             await ctx.send(embed=embed)
             return
@@ -355,7 +355,7 @@ class Moderation(commands.Cog):
         embed = discord.Embed(
             title="✅ User Unwhitelisted",
             description=f"{user.mention} has been removed from ping security whitelist",
-            color=0x00ff00
+            color=0x2e2e2e
         )
         await ctx.send(embed=embed)
 
@@ -366,7 +366,7 @@ class Moderation(commands.Cog):
             embed = discord.Embed(
                 title="❌ Permission Denied", 
                 description="You need **Administrator** permission to use this command!", 
-                color=0xff0000
+                color=0x2e2e2e
             )
             await ctx.send(embed=embed)
             return
@@ -401,7 +401,7 @@ class Moderation(commands.Cog):
             embed = discord.Embed(
                 title="❌ Permission Denied", 
                 description="You need **Administrator** permission to use this command!", 
-                color=0xff0000
+                color=0x2e2e2e
             )
             await ctx.send(embed=embed)
             return
@@ -432,7 +432,7 @@ class Moderation(commands.Cog):
             embed = discord.Embed(
                 title="✅ Bot Whitelisted",
                 description=f"🤖 **{bot_user.name}** has been whitelisted for antinuke protection",
-                color=0x00ff00
+                color=0x2e2e2e
             )
             embed.add_field(name="Bot ID", value=bot_id, inline=True)
             embed.add_field(name="Status", value="Protected from antinuke", inline=True)
@@ -452,7 +452,7 @@ class Moderation(commands.Cog):
             embed = discord.Embed(
                 title="❌ Permission Denied", 
                 description="You need **Manage Channels** permission to use this command!", 
-                color=0xff0000
+                color=0x2e2e2e
             )
             await ctx.send(embed=embed)
             return
@@ -484,7 +484,7 @@ class Moderation(commands.Cog):
             embed = discord.Embed(
                 title="❌ Permission Denied", 
                 description="You need **Manage Channels** permission to use this command!", 
-                color=0xff0000
+                color=0x2e2e2e
             )
             await ctx.send(embed=embed)
             return
@@ -499,7 +499,7 @@ class Moderation(commands.Cog):
             embed = discord.Embed(
                 title="👁️‍🗨️ Channel Hidden",
                 description=f"**{channel.name}** has been hidden from @everyone",
-                color=0x808080
+                color=0x2e2e2e
             )
             await ctx.send(embed=embed)
         except Exception as e:
@@ -512,7 +512,7 @@ class Moderation(commands.Cog):
             embed = discord.Embed(
                 title="❌ Permission Denied", 
                 description="You need **Manage Channels** permission to use this command!", 
-                color=0xff0000
+                color=0x2e2e2e
             )
             await ctx.send(embed=embed)
             return
@@ -527,7 +527,7 @@ class Moderation(commands.Cog):
             embed = discord.Embed(
                 title="👁️ Channel Unhidden",
                 description=f"**{channel.name}** is now visible to @everyone",
-                color=0x00ff00
+                color=0x2e2e2e
             )
             await ctx.send(embed=embed)
         except Exception as e:
@@ -551,7 +551,7 @@ class Moderation(commands.Cog):
             embed = discord.Embed(
                 title="✅ User Unbanned",
                 description=f"**{user.name}#{user.discriminator}** has been unbanned",
-                color=0x00ff00
+                color=0x2e2e2e
             )
             embed.add_field(name="Reason", value=reason, inline=False)
             embed.add_field(name="Unbanned by", value=ctx.author.mention, inline=True)
@@ -582,14 +582,14 @@ class Moderation(commands.Cog):
                 embed = discord.Embed(
                     title="➖ Role Removed",
                     description=f"Removed **{role.name}** from {member.mention}",
-                    color=0xff0000
+                    color=0x2e2e2e
                 )
             else:
                 await member.add_roles(role)
                 embed = discord.Embed(
                     title="➕ Role Added",
                     description=f"Added **{role.name}** to {member.mention}",
-                    color=0x00ff00
+                    color=0x2e2e2e
                 )
 
             embed.add_field(name="Modified by", value=ctx.author.mention, inline=True)
@@ -611,7 +611,7 @@ class Moderation(commands.Cog):
         embed = discord.Embed(
             title=f"📋 Punishment History for {member.name}",
             description="Recent moderation actions:",
-            color=0x0099ff
+            color=0x2e2e2e
         )
 
         # Check recent audit logs for this user
@@ -715,7 +715,7 @@ class NukeConfirmView(discord.ui.View):
             embed = discord.Embed(
                 title="`nuked by {user}`",
                 description=f"**{channel_name}** has been nuked and recreated",
-                color=0x00ff00
+                color=0x2e2e2e
             )
             embed.add_field(name="Nuked by", value=interaction.user.mention, inline=True)
             embed.add_field(name="Previous Messages", value="All deleted", inline=True)
@@ -738,7 +738,7 @@ class NukeConfirmView(discord.ui.View):
         embed = discord.Embed(
             
             description="Channel nuke has been cancelled",
-            color=0xff0000
+            color=0x2e2e2e
         )
         await interaction.response.edit_message(embed=embed, view=None)
         self.value = False
