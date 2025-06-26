@@ -42,15 +42,15 @@ class Giveaway(commands.Cog):
         end_time = datetime.now() + timedelta(seconds=duration_seconds)
         
         embed = discord.Embed(
-            title="🎉 GIVEAWAY 🎉",
+            title="<:tadaa:1387787982735540266> GIVEAWAY <:tadaa:1387787982735540266>",
             description=f"**Prize:** {prize}\n**Winners:** {winners}\n**Ends:** <t:{int(end_time.timestamp())}:R>",
             color=0x2e2e2e
         )
-        embed.add_field(name="How to Enter:", value="React with 🎉 to enter!", inline=False)
+        
         embed.set_footer(text=f"Hosted by {ctx.author.display_name}")
         
         message = await ctx.send(embed=embed)
-        await message.add_reaction("🎉")
+        await message.add_reaction("<:giveaways:1387030030835519601>")
         
         self.giveaways[str(message.id)] = {
             'channel_id': ctx.channel.id,
