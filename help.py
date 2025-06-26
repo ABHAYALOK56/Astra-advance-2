@@ -132,7 +132,7 @@ class Help(commands.Cog):
             description= "<:1000082740:1387029387270164572>Hey bud! I'm **Astra**, a bot, here to make your "
             "discord experience even better. Need help with "
             "commands? Type `{load_prefix()}` to see what I can do.",
-            color=0x566573
+            color=0x2e2e2e
         )
         
         embed.set_footer(text="Use the dropdown menu to explore commands!")
