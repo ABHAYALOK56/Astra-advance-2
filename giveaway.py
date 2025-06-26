@@ -44,7 +44,7 @@ class Giveaway(commands.Cog):
         embed = discord.Embed(
             title="🎉 GIVEAWAY 🎉",
             description=f"**Prize:** {prize}\n**Winners:** {winners}\n**Ends:** <t:{int(end_time.timestamp())}:R>",
-            color=0x00ff00
+            color=0x2e2e2e
         )
         embed.add_field(name="How to Enter:", value="React with 🎉 to enter!", inline=False)
         embed.set_footer(text=f"Hosted by {ctx.author.display_name}")
@@ -94,7 +94,7 @@ class Giveaway(commands.Cog):
                     embed = discord.Embed(
                         title="❌ Not Enough Participants",
                         description="Not enough people entered the giveaway!",
-                        color=0xff0000
+                        color=0x2e2e2e
                     )
                     await ctx.send(embed=embed)
                     return
@@ -105,7 +105,7 @@ class Giveaway(commands.Cog):
                 embed = discord.Embed(
                     title="🎉 Giveaway Rerolled!",
                     description=f"**New Winner(s):** {', '.join(winner_mentions)}\n**Prize:** {giveaway['prize']}",
-                    color=0x00ff00
+                    color=0x2e2e2e
                 )
                 await ctx.send(embed=embed)
                 
@@ -125,7 +125,7 @@ class Giveaway(commands.Cog):
             embed = discord.Embed(
                 title="✅ Giveaway Deleted",
                 description="Giveaway has been deleted from the database",
-                color=0x00ff00
+                color=0x2e2e2e
             )
             await ctx.send(embed=embed)
         else:
@@ -140,7 +140,7 @@ class Giveaway(commands.Cog):
             
             embed = discord.Embed(
                 title="❄️ Snowflake Information",
-                color=0x00ff00
+                color=0x2e2e2e
             )
             embed.add_field(name="ID", value=snowflake_id, inline=False)
             embed.add_field(name="Created At", value=created_at.strftime("%B %d, %Y at %H:%M:%S UTC"), inline=False)
@@ -171,7 +171,7 @@ class Giveaway(commands.Cog):
                     embed = discord.Embed(
                         title="❌ Giveaway Ended",
                         description=f"Not enough people entered the giveaway!\n**Prize:** {giveaway['prize']}",
-                        color=0xff0000
+                        color=0x2e2e2e
                     )
                     await channel.send(embed=embed)
                 else:
@@ -181,7 +181,7 @@ class Giveaway(commands.Cog):
                     embed = discord.Embed(
                         title="🎉 Giveaway Ended!",
                         description=f"**Winner(s):** {', '.join(winner_mentions)}\n**Prize:** {giveaway['prize']}",
-                        color=0x00ff00
+                        color=0x2e2e2e
                     )
                     await channel.send(embed=embed)
                     
@@ -189,7 +189,7 @@ class Giveaway(commands.Cog):
                     original_embed = discord.Embed(
                         title="🎉 GIVEAWAY ENDED 🎉",
                         description=f"**Prize:** {giveaway['prize']}\n**Winner(s):** {', '.join(winner_mentions)}",
-                        color=0xff0000
+                        color=0x2e2e2e
                     )
                     await message.edit(embed=original_embed)
             
