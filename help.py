@@ -21,7 +21,7 @@ class HelpSelect(Select):
                            "`greet`\n"
                            "`verification`\n"
                            "`welcome`\n",
-                color=0x566573
+                color=0x2e2e2e
             )
              
             ,
@@ -49,7 +49,7 @@ class HelpSelect(Select):
                            "`unwhitelist`\n"
                            "`whitelistview`\n"
                            "`unhide`",
-                color=0x566573
+                color=0x2e2e2e
             ),
             "utility": discord.Embed(
                 title="Utility `[34]",
@@ -86,7 +86,7 @@ class HelpSelect(Select):
                            "`ytnotifier`\n"
                            "`introduction`\n"
                            "`support`",
-                color=0x566573
+                color=0x2e2e2e
             ),
             "giveaway": discord.Embed(
                 title="Giveaway `[5]`",
@@ -95,7 +95,7 @@ class HelpSelect(Select):
                            "`greroll\n"
                            "`gdelete`\n"
                            "`snowfake`",
-                color=0x566573
+                color=0x2e2e2e
             ),
             "owner": discord.Embed(
                 title="Premium command`[10]`",
@@ -110,7 +110,7 @@ class HelpSelect(Select):
                            "`botowner`\n"
                            "`premium`\n"
                            ,
-                color=0x566573
+                color=0x2e2e2e
             )
         }
 
